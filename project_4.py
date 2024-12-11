@@ -40,3 +40,15 @@ class ShoppingCart:
     
     def list_contents(self):
         return [product["name"] for product in self._contents]
+
+class Order:
+    def __init__(self, cart):
+        self._cart = cart
+        self._total = cart.calculate_total()
+
+    def display_order_summary(self):
+        print("Order Summary")
+        for product in self._car._contents:
+            print(f"-{product['name']}: ${product['final_price']:.2f}")
+        print(f"Total: ${self._total:.2f}")
+
