@@ -24,3 +24,19 @@ class Product:
     class Clothing():
         def calculate_discount(self):
             return self._price * 0.20
+
+class ShoppingCart:
+    def __init__(self):
+        self._contents = []
+
+    def add_product(self, product):
+        self._contents.append({"name": product.name, "price": product.price, "final_price": product.final_price()})
+
+    def remove_product(self, product_name):
+        self._contents = [p for p in self._contents if p["name"] != product_name]
+
+    def calculate_total(self):
+        return sum(product["final_price"] for product in self._contents)
+    
+    def list_contents(self):
+        return [product["name"] for product in self._contents]
