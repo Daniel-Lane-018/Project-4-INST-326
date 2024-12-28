@@ -1,0 +1,1 @@
+This code recreates an online shopping cart that has a set list of items that can be bought. You can also remove the items from the cart. Their is a discount that is applied to the two different types of products and the total is calculated for the total.
